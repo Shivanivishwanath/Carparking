@@ -1,0 +1,191 @@
+#head{
+    left: 100%;
+}
+#heading{
+    border-radius: 10px;
+    margin:auto;
+    background-color: aquamarine;
+    text-align: center;
+    font-weight: 800;
+    font-size:xx-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 100px;
+    width: 150px;
+    position: relative;
+}
+body{
+    background-color: black;
+    position:relative;
+    margin: 0;
+    padding: 0;
+}
+.center-text {
+    text-align: center;
+    position: absolute;
+    top: 220px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size:400%;
+}
+.text{
+    text-align: center;
+    position: absolute;
+    top: 350px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size:250%;
+}
+
+#main{
+    margin:auto;
+    background-color: black;
+    width:1150px;
+    display:inline-flex;
+    position: absolute;
+    top:200px;
+    left: 5%;
+}
+#slotsi {
+    border-radius: 20px;
+    width: 520px;
+    height: 200px;
+    position: absolute;
+    top: 200px;
+    left: -75px;;
+    border-style: solid;
+    border-width: 5px;
+    background-color: rgb(120, 103, 75); 
+    display:inline-flex;
+    transform: rotate(45deg);
+}
+#slotsii {
+    border-radius: 20px;
+    width: 520px;
+    height: 200px;
+    position:absolute;
+    top: 200px;
+    right: -136px;
+    border-style: solid;
+    border-width: 5px;
+    background-color: rgb(120, 103, 75); 
+    display:inline-flex;
+    transform: rotate(-45deg);
+}
+#slot1, #slot2, #slot3,#slot4,#slot5,#slot6,#slot8,#slot10,#slot9,#slot7{
+    width:20%;
+    height:96%;
+    border-radius: 30px;
+    margin:4px;
+    text-align: center;
+    background-color: rgb(194, 194, 46);
+}
+
+
+#slot1:hover, #slot2:hover, #slot3:hover,#slot4:hover,#slot5:hover,#slot6:hover,#slot7:hover,#slot8:hover,#slot9:hover,#slot10:hover{
+    border-radius: 10px;
+    border-color: #889213;
+    color:white;
+    box-shadow: 10px 5px 5px #f1ff5c;
+    transform: translateY(-0.25cm);
+    cursor:pointer;
+}
+
+.triangle{
+    background-color: transparent;
+}
+.triangle-left{
+    background-color: transparent;
+    width: 0px;
+    height: 0px;
+    position:absolute;
+    top: 400px;
+
+    border-left: 180px solid green;
+    border-bottom: 180px solid green;
+    border-right: 180px solid transparent;
+    border-top: 180px solid transparent;
+}
+.triangle-right{
+    background-color: transparent;
+    width: 0px;
+    height: 0px;
+    position:absolute;
+    top:400px;
+    left:73%;
+    border-right: 180px solid green;
+    border-bottom: 180px solid green;
+    border-left: 180px solid transparent;
+    border-top: 180px solid transparent;
+
+}
+
+.circle{
+    background-color: green;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 16%;
+    display: inline-block;
+    border: 1px solid black;
+    height: 150px;
+    width:900px;
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 200px;
+    align-self: center;
+}
+.circle h1{
+    margin: 0;
+    padding: 0;
+    color:white;
+    font: 3em solid white;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    
+}
+
+.rectangle{
+    background-color: burlywood;
+    width:590px;
+    height: 100px;
+    position: absolute;
+    top: 660px;
+    left:27.53%;
+    border-radius: 20px;
+}
+.rectangle h3{
+    margin: 0;
+    padding: 0;
+    font: 500px;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#doneButton {
+    background-color: maroon;
+    color: white;
+    border-radius: 10px;
+    border-color: #889213;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 450px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#doneButton:hover{
+    border-radius: 10px;
+    color:white;
+    box-shadow: 10px 5px 5px #9fa836;
+    cursor:pointer;
+}
+
+
+

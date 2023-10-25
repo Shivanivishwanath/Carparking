@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car-parking</title>
+    <link rel="stylesheet" href="parking.css">
+</head>
+<body>
+    
+    <div class="center-text">KITSW Car Parking</div>
+    <div id="head">
+    <p id="heading">CIVIL BLOCK</p>
+    </div>
+    <div class="triangle">
+        <div class="triangle-left"></div>
+        <div class="triangle-right"></div>
+        <div class="triangle-one"></div>
+        <div class="triangle-two"></div>
+    </div>
+    <div class="circle"><h1> GARDEN <br> AREA </h1></div>
+    <div class="rectangle">
+        <h3>CIVIL BLOCK</h3>
+    </div>
+    <div id="main">
+    <div id="slotsi">
+        <div class="slot" id="slot1">
+            <p>PARKING SLOT1</p>
+        </div>
+        <div class="slot" id="slot2">
+            <p>PARKING SLOT2</p>
+        </div>
+        <div class="slot" id="slot3">
+            <p>PARKING SLOT3</p>
+        </div>
+        <div class="slot" id="slot4">
+            <p>PARKING SLOT4</p>
+        </div>
+        <div class="slot" id="slot5">
+            <p>PARKING SLOT5</p>
+        </div>
+    </div>
+    <div id="slotsii">
+        <div class="slot" id="slot6">
+            <p>PARKING SLOT6</p>
+        </div>
+        <div class="slot" id="slot7">
+            <p>PARKING SLOT7</p>
+        </div>
+        <div class="slot" id="slot8">
+            <p>PARKING SLOT8</p>
+        </div>
+        <div class="slot" id="slot9">
+            <p>PARKING SLOT9</p>
+        </div>
+        <div class="slot" id="slot10">
+            <p>PARKING SLOT10</p>
+        </div>
+        </div>
+    </div>
+    <div class="text">After selection of slots, click submit button.</div>
+    <button id="doneButton">SUBMIT</button>
+    <div id="prompt"></div>
+</body>
+
+<script>
+    const slots = document.querySelectorAll('.slot');
+    const selectedSlots = [];
+
+    function toggleSlotSelection(slotId) {
+        const slotIndex = selectedSlots.indexOf(slotId);
+        const slotElement = document.getElementById(slotId);
+
+        if (slotIndex === -1) {
+            selectedSlots.push(slotId);
+            slotElement.style.backgroundColor = 'maroon'; 
+        } 
+        else
+        {
+            selectedSlots.splice(slotIndex, 1);
+            slotElement.style.backgroundColor = 'rgb(194, 194, 46)'; 
+        }
+    }
+
+    slots.forEach(slot => {
+        slot.onclick = function() {
+            toggleSlotSelection(slot.id);
+        };
+    });
+
+    document.getElementById('doneButton').onclick = function() {
+        const selectedCount = selectedSlots.length;
+        if (selectedCount > 0) {
+            const slotsText = selectedSlots.join(', ');
+            const confirmationMessage = `You have selected ${selectedCount} slot(s): ${slotsText}. Click OK to confirm your selection.`;
+            
+            if (confirm(confirmationMessage)) {
+                alert(`Confirmed! You have selected ${selectedCount} slots: ${slotsText}`);
+                slots.forEach(slot => {
+                    slot.style.pointerEvents = 'none';
+                });
+            } else {
+                selectedSlots.forEach(slotId => {
+                    const slotElement = document.getElementById(slotId);
+                    slotElement.style.backgroundColor = 'rgb(194, 194, 46)';
+                });
+                selectedSlots.length = 0;
+                alert('Selection undone.');
+            }
+        } else {
+            alert('No slots selected.');
+        }
+    };
+
+
+</script>
+
+</html>
